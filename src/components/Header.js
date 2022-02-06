@@ -6,13 +6,37 @@ export default function Header() {
   return (
     <div className="tabs">
       <Tab>
-        <NavLink to="/"  activeClassName="is-active" exact={true}>Home</NavLink>
+        <NavLink 
+          to="/" exact={true}
+          style={({ isActive }) => ({ 
+            background: isActive ? '#5131a9' : 'none',
+            color: isActive ? '#eee' : 'none'
+          })}
+        >
+          Home
+        </NavLink>
       </Tab>
       <Tab>
-        <NavLink to="/about"  activeClassName="is-active">About</NavLink>
+        <NavLink
+          to="/about"
+          style={({ isActive }) => ({ 
+            background: isActive ? '#5131a9' : 'none',
+            color: isActive ? '#eee' : 'none'
+          })}
+        >
+          About
+        </NavLink>
       </Tab>
       <Tab>
-        <NavLink to="/features"  activeClassName="is-active">Features</NavLink>
+        <NavLink
+          to="/features"
+          style={({ isActive }) => ({ 
+            background: isActive ? '#5131a9' : 'none',
+            color: isActive ? '#eee' : 'none'
+          })}
+        >
+          Features
+        </NavLink>
       </Tab>
     </div>
   )
