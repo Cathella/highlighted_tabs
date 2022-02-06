@@ -1,9 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Tab from './components/Tab';
-import Home from './pages/Home';
-import About from './pages/About';
-import Features from './pages/Features';
+import { BrowserRouter } from 'react-router-dom';
+import AppRoutes from './AppRoutes';
+import Header from './components/Header';
 import './App.css';
 
 function App() {
@@ -11,18 +9,10 @@ function App() {
     <BrowserRouter>
       <div className="app">
         <div className="browser">
-          <div className="tabs">
-            <Tab><a>Home</a></Tab>
-            <Tab><a>About</a></Tab>
-            <Tab><a>Features</a></Tab>
-          </div>
+          <Header />
 
           <div className="viewport">
-            <Routes>
-              <Route path="/about" element={<About />} />
-              <Route path="/features" element={<Features />} />
-              <Route path="/" exact={true} element={<Home />} />
-            </Routes>
+            <AppRoutes />
           </div>
         </div>
       </div>
